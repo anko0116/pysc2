@@ -143,6 +143,22 @@ replays back to exactly the same visuals that the human saw.
 
 ### Observation
 
+All of the following info, together with cargo_slots_available, game_loop and score_cumulative, can be received by an agent at every step through the obs.observation dictionary.
+
+##### obs.observation
+- screen
+- available_actions
+- cargo_slots_available
+- player
+- minimap
+- multi_select
+- game_loop
+- cargo
+- score_cumulative
+- single_select
+- build_queue
+- control_groups
+
 #### Spatial/Visual
 
 ##### RGB Pixels
