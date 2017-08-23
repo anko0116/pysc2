@@ -123,6 +123,11 @@ including your own.
 ```shell
 $ python -m pysc2.bin.agent --map CollectMineralShards --agent pysc2.agents.scripted_agent.CollectMineralShards
 ```
+To run your own agent, assuming it's a class Piggy in a file piggy.py in the directory you are currently in, you can run it like so:
+
+```shell
+$ python -m pysc2.bin.agent --map MoveToBeacon --agent piggy.Piggy
+```
 
 To specify the agent's race, the opponent's difficulty, and more, you can pass
 additional flags. Run with `--help` to see what you can change.
