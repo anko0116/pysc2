@@ -154,7 +154,8 @@ All of the following info, together with cargo_slots_available, game_loop and sc
 - multi_select
 - game_loop
 - cargo
-- score_cumulative
+- score_cumulative (numpy.ndarray with shape (13,) and dtype int32)
+    - the first element [0] is the reward score, i have no idea what the other 12 things are
 - single_select
 - build_queue
 - control_groups
@@ -225,7 +226,7 @@ These can be accessed in obs.observation["screen"][X] where X is the index and i
 *   **player_id**: Who owns the units, with absolute ids.
 *   **player_relative**: Which units are friendly vs hostile. Takes values in
     [0, 4], denoting [background, self, ally, neutral, enemy] units
-    respectively.
+    respectively. [5; shape 84, 84]
 *   **unit_type**: A unit type id
 *   **selected**: Which units are selected. [7; shape 84,84]
 *   **hit_points**: How many hit points the unit has.
