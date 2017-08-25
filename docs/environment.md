@@ -145,8 +145,8 @@ replays back to exactly the same visuals that the human saw.
 
 All of the following info, together with cargo_slots_available, game_loop and score_cumulative, can be received by an agent at every step through the obs.observation dictionary.
 
-##### obs.observation
-- screen
+##### obs.observation (dictionary)
+- screen (numpy.ndarray with shape (13, 84, 84) each representing the screen feature layers described below)
 - available_actions
 - cargo_slots_available
 - player
@@ -214,7 +214,8 @@ location. If you have a large group of them you may not be able to tell how many
 of them you have. A resolution of at least 64<sup>2</sup> is recommended to be
 playable.
 
-These are the screen feature layers:
+These are the screen feature layers: [array index; shape and type of data]
+These can be accessed in obs.observation["screen"][X] where X is the index and indicated in the below list.
 
 *   **height_map**: Shows the terrain levels.
 *   **visibility**: Which part of the map are hidden, have been seen or are
@@ -226,7 +227,7 @@ These are the screen feature layers:
     [0, 4], denoting [background, self, ally, neutral, enemy] units
     respectively.
 *   **unit_type**: A unit type id
-*   **selected**: Which units are selected.
+*   **selected**: Which units are selected. [7; shape 84,84]
 *   **hit_points**: How many hit points the unit has.
 *   **energy**: How much energy the unit has.
 *   **shields**: How much shields the unit has. Only for protoss units.
