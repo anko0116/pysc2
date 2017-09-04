@@ -1,5 +1,3 @@
-# all available actions
-
    0/no_op                                              ()
    1/move_camera                                        (1/minimap [64, 64])
    2/select_point                                       (6/select_point_act [4]; 0/screen [84, 84])
