@@ -147,7 +147,7 @@ All of the following info, together with cargo_slots_available, game_loop and sc
 
 ##### obs.observation (dictionary)
 - screen (numpy.ndarray with shape (13, 84, 84) each representing the screen feature layers described below)
-- available_actions
+- available_actions (given as a numpy.ndarray with function id's, see below for further explanation)
 - cargo_slots_available
 - player
 - minimap
@@ -155,7 +155,7 @@ All of the following info, together with cargo_slots_available, game_loop and sc
 - game_loop
 - cargo
 - score_cumulative (numpy.ndarray with shape (13,) and dtype int32)
-    - the first element [0] is the reward score, i have no idea what the other 12 things are
+    - the first element [0] is the reward score, i have no idea what the other 12 things are. this reward score is updated in the same step as the reward is given out, in obs.reward. you can also access the reward from the agent, self.reward
 - single_select
 - build_queue
 - control_groups
@@ -329,7 +329,7 @@ the available function is valid this frame. Each action is a single
 
 The full set of types and functions are defined in `pysc2.lib.actions`.
 The set of functions is hard coded and limited to just the actions that humans
-have taken, as seen by a large number of replays. It lists both general and
+have taken, as seen by a large number of replays. [THIS IS GREAT, I WOULD HAVE DONE THE SAME SO THANKS FOR THAT EFFORT! (this is not sarcasm)] It lists both general and
 specific functions such that the many forms of cancel are exposed as a single
 action.
 
